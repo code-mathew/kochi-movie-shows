@@ -47,7 +47,7 @@ function runningMovies(response){
     h1.innerHTML = "<h1>"+response[i].title+"</h1>";
     h2.innerHTML = "<h2>"+response[i].cert+"</h2>";
     p.innerHTML = "<p>"+response[i].lang+"</p>";
-    button.innerText = '<button type ="submit" class ="btn"><a href="' +response[i].url+'">Book Now</button>';
+    button.innerText = '<a href="' +response[i].url+'"><button type ="submit" class ="btn">Book Tickets</button></a>';
 
     div.innerHTML = img.innerText + h1.innerHTML + h2.innerHTML + p.innerHTML + button.innerText;
 
