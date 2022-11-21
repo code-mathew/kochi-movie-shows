@@ -97,6 +97,7 @@ body{
   /* background-repeat: no-repeat; */
   font-family: var(--ff-family);
   overflow-x: hidden;
+  margin-inline: auto;
 }
 
 main{
