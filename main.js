@@ -8,7 +8,7 @@ fetch('./runningMovies.json')
   runningMovies(response); // calls a function with running movies json
 });
 
-
+// running movies fn
 function runningMovies(response){
 
     let runningMovies = document.getElementById('app');
@@ -43,10 +43,36 @@ function runningMovies(response){
         div.classList.add('card');
         let button = document.createElement('button');
 
-    img.innerText = '<img src ="' +response[i].image+'" alt="'+response[i].title+'">';
-    h1.innerHTML = "<h1>"+response[i].title+"</h1>";
-    h2.innerHTML = "<h2>"+response[i].cert+"</h2>";
-    p.innerHTML = "<p>"+response[i].lang+"</p>";
+      /// to check whether any missing data
+
+    if(response[i].image == ""){
+      img.innerText = '<img src ="./assets/image-not-found.jpg" alt="Title not found">';
+          console.warn("Missing Poster");
+    }else{
+      img.innerText = '<img src ="' +response[i].image+'" alt="'+response[i].title+'">';
+    }
+
+    if(response[i].title == ""){
+      h1.innerHTML = "<h1>Title Not Found</h1>";
+      console.warn("Missing Title");
+    }else{
+      h1.innerHTML = "<h1>"+response[i].title+"</h1>";
+    }
+
+    if(response[i].cert == ""){
+      h2.innerHTML = "<h2>Certificate Not Found</h2>";
+          console.warn("Missing Certificate");
+    }else{
+      h2.innerHTML = "<h2>"+response[i].cert+"</h2>";
+    }
+
+    if(response[i].lang == ""){
+      p.innerHTML = "<p>Language Not Found</p>";
+          console.warn("Missing Language");
+    }else{
+      p.innerHTML = "<p>"+response[i].lang+"</p>";
+    }
+      
     button.innerText = '<a href="' +response[i].url+'"><button type ="submit" class ="btn">Book Tickets</button></a>';
 
     div.innerHTML = img.innerText + h1.innerHTML + h2.innerHTML + p.innerHTML + button.innerText;

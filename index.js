@@ -21,7 +21,7 @@ const puppeteer = require('puppeteer');
      
      
      await page.screenshot({path:'example.png', fullPage:true });
-    //Running Movies section
+    //Running Movies section 1
      const runningMoviesAlpha = await page.evaluate(()=> 
      Array.from(document.querySelectorAll('.jBFgAs .gteFjS .cVsUJT .gDSiod a'), (e)=> ({
          title: e.querySelector('.Xdzak .kKvMMQ .dmACKf .gyGThn .cFdPHn').innerText,
@@ -35,7 +35,7 @@ const puppeteer = require('puppeteer');
      }))
      );
 
-     //Balance movie list
+     //Balance movie list section 2
      const runningMoviesBeta = await page.evaluate(()=>
      Array.from(document.querySelectorAll('.jBFgAs .gqBECX .iIGMqX .iUuHNJ a'), (e)=> ({
         title: e.querySelector('.eQcIov .cWbeuJ .WfspT .cBsijw').innerText,
